@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>University of Lumora</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling -->
+  <style>
+    .bg-maroon {
+      background-color: #8B1C31;
+    }
+    .dropdown-toggle::after {
+      margin-left: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Header -->
+<header class="bg-maroon text-white d-flex justify-content-between align-items-center px-4 py-2">
+
+  <!-- Left: Logo -->
+  <div>
+    <span class="fs-5 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: bold;">
+      University of Lumora
+    </span>
+  </div>
+
+  <!-- Center: Nav Links -->
+   <div class="d-flex justify-content-center flex-grow-1" style="margin-left: -80px;">
+
+    <nav class="d-flex gap-4 fs-5">
+      <a href="#" class="text-white text-decoration-none">Home</a>
+      
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <a
+          href="#"
+          class="text-white text-decoration-none"
+          id="profileDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Administrator
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="{% url 'studentinfo_index' %}">Student Information</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Right: Search Icon -->
+  <div class="d-flex align-items-center gap-4 fs-5">
+    <a href="#" class="text-white" title="Search"><i class="fas fa-search"></i></a>
+    <div class="dropdown">
+    <a href="#" class="text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="User">
+      <i class="fas fa-user"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Logout</a></li>
+    </ul>
+  </div>
+  </div>
+</header>
+{% block content %}{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
