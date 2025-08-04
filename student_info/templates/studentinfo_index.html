@@ -1,5 +1,62 @@
-% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {%load static%}
  {% block content %}
+<style>
+  .table-wrapper {
+    position: relative;
+  }
+
+  .create-button {
+    position: absolute;
+    top: -10px;         /* adjust height */
+    right: 100px;        /* aligns with last column */
+    z-index: 1;
+  }
+</style>
+
+
+
+
+  <!-- ✅ Wrapper div to position the button -->
+  <div class="table-wrapper">
+    <a href="{% url 'create-student' %}" class="btn btn-success btn-sm create-button">Create</a>
+<div class="container mt-5">
+  <h2 class="mb-3">Students Information</h2>
+      
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>phonenumber</th>
+        <th>Course</th>
+        <th>startdate</th>
+        <th>enddate</th>
+        <th>Address</th>
+        <th>Isactive</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in studentslist %}
+      <tr>
+        <td>{{ student.ID }}</td>
+        <td>{{ student.FirstName }}</td>
+        <td>{{ student.LastName }}</td>
+        <td>{{ student.Email }}</td>
+        <td>{{ student.phonenumber}}</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.startdate }}</td>
+        <td>{{ student.enddate}}</td>
+        <td>{{ student.Address }}</td>
+        <td>{{ student.Isactive}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
  {% endblock %}

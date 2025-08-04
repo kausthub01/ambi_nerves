@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-success text-white">
+      <h4 class="mb-0">Add New Student</h4>
+    </div>
+    <div class="card-body">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        
+        <!-- Loop through all form fields -->
+        {% for field in form %}
+          <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label">
+              {{ field.label }}
+            </label>
+            {{ field }}
+            <!-- Show field errors -->
+            {% if field.errors %}
+              <div class="text-danger small">
+                {{ field.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        <!-- Submit and cancel buttons -->
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="{% url 'studentinfo_index' %}" class="btn btn-secondary">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

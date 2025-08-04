@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('mylumora.urls')),
-    path('studentinfo', include('student_info.urls')),
+    path('studentinfo/', include('student_info.urls')),
 ]
 
 if settings.DEBUG:

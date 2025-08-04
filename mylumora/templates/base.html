@@ -37,7 +37,7 @@
    <div class="d-flex justify-content-center flex-grow-1" style="margin-left: -80px;">
 
     <nav class="d-flex gap-4 fs-5">
-      <a href="#" class="text-white text-decoration-none">Home</a>
+      <a href="{% url 'home' %}" class="text-white text-decoration-none">Home</a>
       
       <!-- Profile Dropdown -->
       <div class="dropdown">
@@ -52,8 +52,8 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
           <li><a class="dropdown-item" href="{% url 'studentinfo_index' %}">Student Information</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          
+          
         </ul>
       </div>
     </nav>
