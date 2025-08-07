@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container mt-4">
+  <h2>Edit Student</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="id_ID" class="form-label">ID</label>
+        {{ form.ID|as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        <label for="id_FirstName" class="form-label">First Name</label>
+        {{ form.FirstName|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="id_LastName" class="form-label">Last Name</label>
+        {{ form.LastName|as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        <label for="id_Email" class="form-label">Email</label>
+        {{ form.Email|as_crispy_field }}
+      </div>
+    </div>
+
+    <!-- Keep repeating row blocks for other fields -->
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
