@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "mylumora",
     "student_info",
-    "widget_tweaks"
+    "widget_tweaks",
+    "faculty_info",
 ]
 
 MIDDLEWARE = [

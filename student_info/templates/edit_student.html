@@ -1,35 +1,84 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
 <div class="container mt-4">
   <h2>Edit Student</h2>
   <form method="post">
     {% csrf_token %}
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="id_ID" class="form-label">ID</label>
-        {{ form.ID|as_crispy_field }}
-      </div>
-      <div class="col-md-6">
-        <label for="id_FirstName" class="form-label">First Name</label>
-        {{ form.FirstName|as_crispy_field }}
+
+    <div class="mb-3 row">
+      <label for="id_ID" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        {{ form.ID|add_class:"form-control" }}
       </div>
     </div>
 
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="id_LastName" class="form-label">Last Name</label>
-        {{ form.LastName|as_crispy_field }}
-      </div>
-      <div class="col-md-6">
-        <label for="id_Email" class="form-label">Email</label>
-        {{ form.Email|as_crispy_field }}
+    <div class="mb-3 row">
+      <label for="id_FirstName" class="col-sm-2 col-form-label">First Name</label>
+      <div class="col-sm-10">
+        {{ form.FirstName|add_class:"form-control" }}
       </div>
     </div>
 
-    <!-- Keep repeating row blocks for other fields -->
-    
-    <button type="submit" class="btn btn-primary">Save</button>
+    <div class="mb-3 row">
+      <label for="id_LastName" class="col-sm-2 col-form-label">Last Name</label>
+      <div class="col-sm-10">
+        {{ form.LastName|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_Email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        {{ form.Email|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_phonenumber" class="col-sm-2 col-form-label">Phone Number</label>
+      <div class="col-sm-10">
+        {{ form.phonenumber|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_course" class="col-sm-2 col-form-label">Course</label>
+      <div class="col-sm-10">
+        {{ form.course|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_startdate" class="col-sm-2 col-form-label">Start Date</label>
+      <div class="col-sm-10">
+        {{ form.startdate|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_enddate" class="col-sm-2 col-form-label">End Date</label>
+      <div class="col-sm-10">
+        {{ form.enddate|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_Address" class="col-sm-2 col-form-label">Address</label>
+      <div class="col-sm-10">
+        {{ form.Address|add_class:"form-control" }}
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="id_Isactive" class="col-sm-2 col-form-label">Is Active</label>
+      <div class="col-sm-10">
+        {{ form.Isactive|add_class:"form-check-input" }}
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{% url 'studentinfo_index' %}" class="btn btn-secondary ms-2">Cancel</a>
   </form>
 </div>
+{% endblock %}
