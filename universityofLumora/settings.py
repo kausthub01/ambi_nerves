@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "student_info",
     "widget_tweaks",
     "faculty_info",
+    "department",
+    "courses",
 ]
 
 MIDDLEWARE = [
